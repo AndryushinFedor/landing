@@ -1,19 +1,24 @@
 @import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --gutter: 20px;
     --col1: calc((100% - 11* var(--gutter)) / 12);
     --col2: calc(((100% - 11* var(--gutter)) / 12) * 2 + var(--gutter));
     --col3: calc(((100% - 11* var(--gutter)) / 12) * 3 + var(--gutter) * 2);
+    --col4: calc(((100% - 11* var(--gutter)) / 12) * 4 + var(--gutter) * 3);
     --col5: calc(((100% - 11* var(--gutter)) / 12) * 5 + var(--gutter) * 4);
     --col6: calc(((100% - 11* var(--gutter)) / 12) * 6 + var(--gutter) * 5);
     --col7: calc(((100% - 11* var(--gutter)) / 12) * 7 + var(--gutter) * 6);
     --col8: calc(((100% - 11* var(--gutter)) / 12) * 8 + var(--gutter) * 7);
 }
 
-body,
-section {
+body {
     overflow-x: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
 }
 
 a {
@@ -21,26 +26,69 @@ a {
     color: inherit;
 }
 
-header {
-    padding-bottom: 80px;
+
+h1 {
+    font-size: 84px;
+    font-weight: bold;
+    padding-bottom: 40px;
+    line-height: 120%;
+    letter-spacing: 0.01em;
+}
+
+h2 {
+    font-size: 60px;
+    line-height: 120%;
+    letter-spacing: 0.015em;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.but1 {
+    display: flex;
+    width: 10.5vw;
+    height: 2.5vw;
+    color: #0F4D00;
+    background-color: #30F100;
+    border-radius: 100px;
+    border: none;
+    font-weight: 600px;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login {
+    font-size: 24px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
     margin: 0 10%;
+    position: relative;
 }
 
 .row1 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-top: 2.5vw;
 }
+
 
 .menu {
     display: flex;
     list-style-type: none;
 }
 
+.menu li {
+    margin: 0 20px;
+}
+
 .menu a {
     padding: 10px;
+    font-size: 24px;
+    font-weight: 300;
 }
 
 .login {
@@ -49,53 +97,113 @@ header {
 }
 
 .row2 {
+    padding-top: 3vw;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.Main {
+    padding-bottom: 18vw;
 }
 
 .textMain {
-    flex-basis: var(--col5);
+    flex-basis: var(--col6);
+}
+
+.textMain p {
+    padding-bottom: 20px;
+    line-height: 146%;
+    width: 60%;
 }
 
 .pictureMain {
     flex-basis: var(--col6);
     position: relative;
+    padding-top: 5%;
 
 }
 
-.pictureMain img {
-    filter: drop-shadow(20px 20px 10px rgba(0, 0, 0, 0.166));
-    animation: updwn infinite 2s;
-    position: relative;
+.pictureMain .arrows {
+    position: absolute;
+    width: 53%;
+    top: 30%;
+    left: 7%;
+    animation: updwn2 infinite 5s alternate;
+}
+
+@keyframes updwn2 {
+    0% {
+        top: 30%;
+    }
+
+    100% {
+        top: 33%;
+    }
+}
+
+.violet {
+    animation: updwn infinite 5s alternate;
     top: 0;
     left: 0;
-    width: 100%;
+    margin-bottom: 15%;
+    width: 25%;
+}
+
+.blue {
+    animation: updwn infinite 6s alternate;
+    right: -20%;
+    top: 0;
+    width: 66%;
+}
+
+.orange {
+    animation: updwn infinite 7s alternate;
+    top: 0;
+    margin-top: -5%;
+    width: 61%;
+}
+
+.pictureMain img {
+    filter: drop-shadow(0px 30px 50px rgba(0, 0, 0, 0.25));
+
+    position: relative;
+
 }
 
 @keyframes updwn {
     0% {
-        filter: drop-shadow(20px 20px 10px rgba(0, 0, 0, 0.166));
-        top: 0;
+        filter: drop-shadow(0px 30px 50px rgba(0, 0, 0, 0.25));
+        top: 0px;
     }
 
     50% {
-        filter: drop-shadow(20px 40px 10px rgba(0, 0, 0, 0.266));
-        top: -70px;
+        filter: drop-shadow(0px 30px 50px rgba(0, 0, 0, 0.25));
+        top: -20px;
     }
 
     75% {
-        filter: drop-shadow(20px 40px 10px rgba(0, 0, 0, 0.266));
-        top: -50px;
+        filter: drop-shadow(0px 30px 50px rgba(0, 0, 0, 0.25));
+        top: -40px;
     }
 
     100% {
-        filter: drop-shadow(20px 80px 10px rgba(0, 0, 0, 0.266));
-        top: -25px;
+        filter: drop-shadow(0px 30px 50px rgba(0, 0, 0, 0.25));
+        top: -60px;
     }
 }
 
+.project {
+    padding-bottom: 150px;
+}
+
 .projText {
-    width: var(--col6);
+    width: var(--col8);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 146%;
+    padding-bottom: 120px;
 }
 
 .green {
@@ -105,42 +213,37 @@ header {
     z-index: 1;
 }
 
+.item p {
+    padding-top: 40px;
+}
+
 .green img {
-    width: 120%;
+    width: 100%;
 }
 
-.item:nth-child(1) .green img {
+.item .green img {
     position: relative;
-    top: -100px;
-    left: -120px;
+    top: 0px;
+    left: 0px;
     z-index: 2;
+    transition: all 1s;
 }
 
-.item:nth-child(2) .green img {
-    position: relative;
-    top: -10px;
-    left: -47px;
-    z-index: 2;
-}
 
-.item:nth-child(3) .green img {
-    position: relative;
-    top: -50px;
-    left: -180px;
-    z-index: 2;
-}
-
-.green:hover {
-    top: -100px;
-}
 
 .item .green:hover img {
-    top: 100px;
+    top: -40px;
 }
 
 .row3 {
     display: flex;
     justify-content: space-between;
+}
+
+.item p {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
 }
 
 .item {
@@ -149,20 +252,29 @@ header {
 
 .help {
     margin-top: 80px;
-    position: relative;
+
     width: 100%;
     min-height: 600px;
+    padding-bottom: 150px;
 }
 
 .helpText {
-    width: var(--col6);
+    width: var(--col8);
+}
+
+.helpText p {
+    padding-bottom: 20px;
+    width: 33vw;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 146%;
 }
 
 .helpImg {
     position: absolute;
-    top: 0;
+    top: 65%;
     right: 0;
-    width: var(--col8);
+    width: var(--col7);
 }
 
 .helpImg img {
@@ -172,10 +284,21 @@ header {
 .talk {
     margin-top: 80px;
     padding-left: 20px;
+    padding-bottom: 150px;
 }
 
 .talkText {
-    flex-basis: var(--col7);
+    flex-basis: var(--col6);
+}
+
+.talkText p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 146%;
+    letter-spacing: 0.01em;
+    width: 44vw;
+    padding-bottom: 20px;
 }
 
 .talkImg {
@@ -199,6 +322,22 @@ header {
 
 .itemLast {
     flex-basis: var(--col5);
+    margin-right: calc(var(--col1) + var(--gutter));
+}
+
+.itemLast h3 {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.lastText {
+    padding-top: 30px;
+}
+
+.lastText span,
+.lastText img {
+    vertical-align: middle;
 }
 
 .itemF {
@@ -208,7 +347,26 @@ header {
 
 .itemF img {
     width: 20%;
+}
 
+.itemF p {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+.itemF .logoF {
+    width: 40%;
+}
+
+footer h4 {
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
+
+footer li {
+    padding-bottom: 15px;
 }
 
 .itemF1 {
@@ -222,12 +380,118 @@ header {
 }
 
 .itemF3 {
+    flex-basis: var(--col2);
+}
+
+.itemF4 {
     flex-basis: var(--col1);
 }
+
+footer {
+    padding-top: 300px;
+}
+
+footer p {
+    font-size: 13px;
+}
+
+
 
 @media screen and (max-width: 768px) {
     .row5 {
         justify-content: center;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .login {
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    h1 {
+        font-size: 36px;
+        padding-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .textMain p {
+        font-size: 14px;
+        width: 270px;
+        padding-bottom: 15px;
+    }
+
+    .but1 {
+        font-size: 10px;
+    }
+
+    .Main {
+        padding-bottom: 120px;
+    }
+
+    .projText h2 {
+        padding-bottom: 15px;
+    }
+
+    .projText p {
+        font-size: 10px;
+        line-height: 146%;
+    }
+
+    .item p {
+        font-size: 12px;
+    }
+
+    .project {
+        padding-bottom: 120px;
+    }
+
+    .help {
+        min-height: 300px;
+        padding-bottom: 0;
+    }
+
+    .help p {
+        font-size: 10px;
+    }
+
+
+    .helpText h2 {
+        padding-bottom: 15px;
+    }
+
+    .talk {
+        padding-bottom: 80px;
+    }
+
+    .talk p {
+        font-size: 10px;
+    }
+
+    .talk h2 {
+        padding-bottom: 15px;
+    }
+
+    .last h3 {
+        font-size: 14px;
+
+    }
+
+    footer {
+        padding-top: 80px;
+    }
+
+    footer li {
+        font-size: 8px;
+    }
+
+    footer h4 {
+        font-size: 10px;
     }
 }
 
@@ -239,5 +503,30 @@ header {
 
     .textMain {
         flex-basis: var(--col10);
+    }
+
+    .textMain p {
+        font-size: 12px;
+    }
+
+    .but1 {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 36px;
+
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    th {
+        padding-left: 30px;
+    }
+
+    .projText {
+        font-size: 8px;
     }
 }
