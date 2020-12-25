@@ -11,6 +11,10 @@
     --col6: calc(((100% - 11* var(--gutter)) / 12) * 6 + var(--gutter) * 5);
     --col7: calc(((100% - 11* var(--gutter)) / 12) * 7 + var(--gutter) * 6);
     --col8: calc(((100% - 11* var(--gutter)) / 12) * 8 + var(--gutter) * 7);
+    --col9: calc(((100% - 11* var(--gutter)) / 12) * 9 + var(--gutter) * 8);
+    --col10: calc(((100% - 11* var(--gutter)) / 12) * 10 + var(--gutter) * 9);
+    --col11: calc(((100% - 11* var(--gutter)) / 12) * 11 + var(--gutter) * 10);
+    --col12: calc(((100% - 11* var(--gutter)) / 12) * 12 + var(--gutter) * 11);
 }
 
 body {
@@ -45,16 +49,19 @@ h2 {
 
 .but1 {
     display: flex;
-    width: 10.5vw;
-    height: 2.5vw;
     color: #0F4D00;
+    padding: 10px 20px;
     background-color: #30F100;
     border-radius: 100px;
     border: none;
-    font-weight: 600px;
+    font-weight: bold;
     justify-content: space-around;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
+}
+
+.but1 img {
+    margin-left: 40px;
 }
 
 .login {
@@ -89,6 +96,10 @@ h2 {
     padding: 10px;
     font-size: 24px;
     font-weight: 300;
+}
+
+.mobmenu {
+    display: none;
 }
 
 .login {
@@ -240,6 +251,11 @@ h2 {
     justify-content: space-between;
 }
 
+.row3a {
+    display: flex;
+    justify-content: space-between;
+}
+
 .item p {
     font-weight: bold;
     font-size: 24px;
@@ -315,6 +331,12 @@ h2 {
     flex-wrap: wrap;
 }
 
+.row6 {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
 .row4 {
     display: flex;
     justify-content: flex-start;
@@ -323,21 +345,32 @@ h2 {
 .itemLast {
     flex-basis: var(--col5);
     margin-right: calc(var(--col1) + var(--gutter));
+    margin-bottom: 40px;
 }
 
 .itemLast h3 {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     padding-bottom: 20px;
 }
 
 .lastText {
     padding-top: 30px;
+    padding-left: var(--gutter);
+    flex-basis: 45%;
+}
+
+.lastImg {
+    flex-basis: 55%;
 }
 
 .lastText span,
 .lastText img {
     vertical-align: middle;
+}
+
+.b1 {
+    width: 100%;
 }
 
 .itemF {
@@ -369,14 +402,18 @@ footer li {
     padding-bottom: 15px;
 }
 
+footer .adr {
+    line-height: 140%;
+}
+
 .itemF1 {
     flex-basis: var(--col1);
     margin-right: calc(var(--col1) + var(--gutter) * 2);
 }
 
 .itemF2 {
-    flex-basis: var(--col2);
-    margin-right: calc(var(--col1) + var(--gutter) * 2);
+    flex-basis: var(--col3);
+    margin-right: var(--gutter);
 }
 
 .itemF3 {
@@ -398,6 +435,11 @@ footer p {
 
 
 @media screen and (max-width: 768px) {
+
+    .menu li {
+        margin: 0;
+    }
+
     .row5 {
         justify-content: center;
     }
@@ -482,6 +524,14 @@ footer p {
 
     }
 
+    .itemLast {
+        flex-basis: var(--col8);
+    }
+
+    .row5 {
+        justify-content: flex-start;
+    }
+
     footer {
         padding-top: 80px;
     }
@@ -493,6 +543,10 @@ footer p {
     footer h4 {
         font-size: 10px;
     }
+
+    .itemF p {
+        font-size: 8px;
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -501,8 +555,24 @@ footer p {
         justify-content: center;
     }
 
+    .mobmenu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .pictureMain {
+        flex-basis: var(--col9);
+    }
+
+    .arrows {
+        top: 28%;
+    }
+
     .textMain {
-        flex-basis: var(--col10);
+        flex-basis: var(--col12);
     }
 
     .textMain p {
@@ -511,9 +581,81 @@ footer p {
 
     .but1 {
         font-size: 10px;
+        padding: 10px 20px;
     }
 
-    h1 {
+    .projText {
+        width: 100%;
+    }
+
+    .row3 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .item {
+        flex-basis: var(--col8);
+    }
+
+    .item p {
+        padding-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .helpText {
+        width: var(--col10);
+    }
+
+    .helpText p {
+        width: 85%;
+    }
+
+    .helpImg {
+        width: 100%;
+        position: static;
+        padding-top: 10px;
+    }
+
+    .talkImg,
+    .talkText {
+        flex-basis: var(--col12);
+    }
+
+    .talkImg {
+        padding-top: 10px;
+    }
+
+    .row3a {
+        justify-content: center;
+        flex-wrap: wrap-reverse;
+    }
+
+    .itemLast {
+        flex-basis: var(--col12);
+        margin-right: 0;
+    }
+
+    .lastText {
+        padding-top: 5px;
+        flex-basis: 40%;
+    }
+
+    .lastImg {
+        flex-basis: 60%;
+        border-radius: 20px;
+        overflow: hidden;
+        max-width: 125px;
+    }
+
+    .lastImg img {
+        width: 150%;
+    }
+
+    .row4 {
+        align-items: flex-start;
+    }
+
+    . h1 {
         font-size: 36px;
 
     }
@@ -529,4 +671,23 @@ footer p {
     .projText {
         font-size: 8px;
     }
+
+    .itemF1,
+    .itemF3,
+    .itemF4 {
+        display: none;
+    }
+
+    .itemF {
+        flex-basis: var(--cal3);
+    }
+
+    .itemF2 {
+        flex-basis: var(--cal5);
+    }
+
+    .row6 {
+        flex-wrap: nowrap;
+    }
+
 }
