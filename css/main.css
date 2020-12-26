@@ -141,17 +141,7 @@ h2 {
     width: 53%;
     top: 30%;
     left: 7%;
-    animation: updwn2 infinite 5s alternate;
-}
 
-@keyframes updwn2 {
-    0% {
-        top: 30%;
-    }
-
-    100% {
-        top: 33%;
-    }
 }
 
 .violet {
